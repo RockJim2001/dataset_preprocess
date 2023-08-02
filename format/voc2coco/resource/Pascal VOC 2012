@@ -1,0 +1,92 @@
+# Pascal VOC 2012数据集 说明
+VOC2012/
+├── Annotations/    包含每个图像的XML格式注释文件
+│   ├── 2007_000001.xml
+│   ├── 2007_000002.xml
+│   ├── ...
+├── ImageSets/  包含用于训练、验证和测试集的图像索引文件
+│   ├── Main/   包含不同类别和数据集划分的图像索引文件（目标检测与分类）
+│   │   ├── aeroplane_train.txt
+│   │   ├── aeroplane_val.txt
+│   │   ├── ...
+├── JPEGImages/ 包含所有图像文件，通常以JPEG格式存储
+│   ├── 2007_000001.jpg
+│   ├── 2007_000002.jpg
+│   ├── ...
+├── SegmentationClass/  包含语义分割掩码图像，用于像素级标注
+│   ├── 2007_000001.png
+│   ├── 2007_000002.png
+│   ├── ...
+├── SegmentationObject/ 包含对象级别分割掩码图像
+│   ├── 2007_000001.png
+│   ├── 2007_000002.png
+│   ├── ...
+├── ...
+
+
+1、一张图片对应一个.xml文件
+如 2007_000001.xml文件
+<annotation>    # 根元素，包含整个注释信息
+	<folder>VOC2012</folder>    # 包含图像所在的文件夹名称
+	<filename>2007_000027.jpg</filename>    # 包含图像文件的名称
+	<source>
+		<database>The VOC2007 Database</database>
+		<annotation>PASCAL VOC2007</annotation>
+		<image>flickr</image>
+	</source>
+	<size>  #   包含图像的尺寸信息，包括宽度（<width>）和高度（<height>）
+		<width>486</width>
+		<height>500</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>    #  表示图像中的一个目标对象，可以有多个<object>元素
+		<name>person</name>     #   目标对象的类别名称
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>    #   包含目标对象的边界框信息
+			<xmin>174</xmin>    #   边界框左上角的x坐标
+			<ymin>101</ymin>    #   边界框左上角的y坐标
+			<xmax>349</xmax>    #   边界框右下角的x坐标
+			<ymax>351</ymax>    #   边界框右下角的y坐标
+		</bndbox>
+		<part>
+			<name>head</name>
+			<bndbox>
+				<xmin>169</xmin>
+				<ymin>104</ymin>
+				<xmax>209</xmax>
+				<ymax>146</ymax>
+			</bndbox>
+		</part>
+		<part>
+			<name>hand</name>
+			<bndbox>
+				<xmin>278</xmin>
+				<ymin>210</ymin>
+				<xmax>297</xmax>
+				<ymax>233</ymax>
+			</bndbox>
+		</part>
+		<part>
+			<name>foot</name>
+			<bndbox>
+				<xmin>273</xmin>
+				<ymin>333</ymin>
+				<xmax>297</xmax>
+				<ymax>354</ymax>
+			</bndbox>
+		</part>
+		<part>
+			<name>foot</name>
+			<bndbox>
+				<xmin>319</xmin>
+				<ymin>307</ymin>
+				<xmax>340</xmax>
+				<ymax>326</ymax>
+			</bndbox>
+		</part>
+	</object>
+</annotation>
+
